@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}admin.admin{% endtrans %}:{% block pageTitle %}{% endblock %}{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/custom/admin.css') }}">
+{% endblock %}
+{% block body %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">{% trans %}admin.admin{% endtrans %}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{path('adminDashboard')}}">
+                        <i class="fa fa-desktop"></i>
+                        {% trans %}admin.dashboard{% endtrans %}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{path('adminUsers')}}">
+                        <i class="fa fa-users"></i>
+                        {% trans %}admin.users{% endtrans %}
+                    </a>
+                </li>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-newspaper"></i>
+                        {% trans %}admin.news{% endtrans %}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{path('adminNewsNew')}}">
+                            <i class="fa fa-plus-circle"></i>
+                            {% trans %}admin.news.new{% endtrans %}
+                        </a>
+                        <a class="dropdown-item" href="{{path('adminNews')}}">
+                            <i class="fa fa-list"></i>
+                            {% trans %}admin.news{% endtrans %}
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_logout') }}">
+                        <i class="fa fa-eject"></i>
+                        {% trans %}user.logout{% endtrans %}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row pt-2">
+            <main role="main" class="col-md-12 col-sm">
+                <div class="">
+                    {% block pageBody %}{% endblock %}
+                </div>
+            </main>
+        </div>
+    </div>
+{% endblock %}

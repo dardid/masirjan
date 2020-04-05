@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}user.login{% endtrans %}{% endblock %}
+
+{% block body %}
+    <style>
+        body{
+            background-color: #3498DB;
+        }
+    </style>
+<div class="container">
+    <div class="row">
+        <div class="col-sm col-md-6 mx-auto pt-md-4">
+            <div class="card">
+                <img class="card-img-top" src="{{ asset('images/login.png') }}">
+                <div class="card-header bg-secondary text-light">{% trans %}user.login.des{% endtrans %}</div>
+                <div class="card-body">
+                    <form method="post">
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+
+                        {% if app.user %}
+                            <div class="alert alert-warning mb-3">
+                                {% trans with {'%username%':  app.user.username }%}user.login.as%username%{% endtrans %}, <a href="{{ path('app_logout') }}">{% trans %}user.logout{% endtrans %}</a>
+                            </div>
+                        {% endif %}
+                        <label for="inputEmail">{% trans %}user.email{% endtrans %}</label>
+                        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
+                        <label for="inputPassword">{% trans %}user.password{% endtrans %}</label>
+                        <input type="password" name="password" id="inputPassword" class="form-control" required>
+
+                        <input type="hidden" name="_csrf_token"
+                               value="{{ csrf_token('authenticate') }}"
+                        >
+                        <br class="my-0">
+                        <div class="float-right">
+                            <button class="btn btn-primary" type="submit">
+                                {% trans %}user.login{% endtrans %}
+                            </button>
+                            <a class="btn btn-secondary" href="{{ path('home') }}">{% trans %}user.back{% endtrans %}</a>
+                        </div>
+                        <div class="float-left">
+                            <div class="form-group form-check">
+                                <input type="checkbox" name="_remember_me">
+                                <label class="form-check-label" for="exampleCheck1">{% trans %}user.remember.me{% endtrans %}</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

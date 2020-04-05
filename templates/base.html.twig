@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap-rtl.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/datatables/datatables.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/fontawsome/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/datatables/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/sahel/sahel.css') }}">
+    {% block stylesheets %}{% endblock %}
+
+    <title>{% block title %}Welcome!{% endblock %}</title>
+
+</head>
+<body>
+<style>
+    body{
+        font-family: 'Sahel FD', Tahoma;
+    }
+</style>
+{% block body %}{% endblock %}
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="{{ asset('assets/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/popper/popper.min.js') }}"></script>
+<script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/datatables/datatables.min.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('assets/fontawsome/fontawesome.min.css') }}">
+{% block javascripts %}{% endblock %}
+<script>
+    $(document).ready(function(){
+        //create datatable
+        var table = $('.table').DataTable({
+            "language": {
+                "url": "{{ asset('assets/datatables/datatable.farsi.json') }}",
+                buttons: {
+                    colvis: 'ستون‌ها',
+                    print: "چاپ",
+                    excel: "اکسل",
+                    copy: "رونوشت"
+                }
+            },
+            "pageLength": 32,
+            "responsive": true,
+            "autoWidth": false,
+            "colReorder": true,
+            "lengthMenu": [[10, 32, 100, -1], [10, 32, 100, "همه"]],
+            dom: 'Blftip',
+            buttons: [
+                'copyHtml5',
+                'excelHtml5',
+                'colvis',
+                'print'
+            ]
+        });
+
+        new $.fn.dataTable.ColReorder(table);
+    });
+</script>
+</body>
+</html>

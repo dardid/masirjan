@@ -1,0 +1,18 @@
+@font-face {
+
+    font-family: 'Sahel FD';
+
+    src: url('Sahel-FD.eot');
+
+    src: local('Sahel FD'), url('Sahel-FD.woff') format('woff'), url('Sahel-FD.ttf') format('truetype');
+
+    font-weight: normal;
+
+    font-style:normal;
+
+}
+body{
+    font-family: 'Sahel FD',Tahoma;!important;
+    font-weight: bold;
+}
+

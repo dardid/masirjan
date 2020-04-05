@@ -1,0 +1,13 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block pageTitle %}{% trans %}admin.news.new{% endtrans %}{% endblock %}
+{% block pageBody %}
+    <h1>{% trans %}admin.news.new{% endtrans %}</h1>
+    <div class="row">
+        <div class="col-sm-12">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
