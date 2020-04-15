@@ -2,64 +2,485 @@
 
 {% block title %}{% trans %}admin.admin{% endtrans %}:{% block pageTitle %}{% endblock %}{% endblock %}
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('assets/custom/admin.css') }}">
+    <!-- Plugin styles -->
+    <link rel="stylesheet" href="{{ asset('vendors/bundle.css') }}" type="text/css">
+
+    <!-- Datepicker -->
+    <link rel="stylesheet" href="{{ asset('vendors/datepicker/daterangepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/Datepiker/persian-datepicker.css') }}">
+
+
+    <!-- Fullcalendar -->
+    <link rel="stylesheet" href="{{ asset('vendors/fullcalendar/fullcalendar.min.css') }}" type="text/css">
+    <link href='{{ asset('assets/Cal/fullcalendar.css') }}' rel='stylesheet' />
+    <link href='{{ asset('assets/Cal/fullcalendar.print.css') }}' rel='stylesheet' media='print' />
+
+    <!-- Vmap -->
+    <link rel="stylesheet" href="{{ asset('vendors/vmap/jqvmap.min.css') }}">
+
+    <!-- App styles -->
+    <link rel="stylesheet" href="{{ asset('assets/css/app.min.css') }}" type="text/css">
+    
+{% endblock %}
+
+{% block javascripts %}
+
+    <!-- Plugin scripts -->
+    <script src="{{ asset('vendors/bundle.j') }}s"></script>
+
+    <!-- Chartjs -->
+    <script src="{{ asset('vendors/charts/chartjs/chart.min.js') }}"></script>
+
+    <!-- Apex chart -->
+    <script src="{{ asset('vendors/charts/apex/apexcharts.min.js') }}"></script>
+
+    <!-- Circle progress -->
+    <script src="{{ asset('vendors/circle-progress/circle-progress.min.js') }}"></script>
+
+    <!-- Peity -->
+    <script src="{{ asset('vendors/charts/peity/jquery.peity.min.js') }}"></script>
+    <script src="{{ asset('assets/js/examples/charts/peity.js') }}"></script>
+
+    <!-- Datepicker -->
+    <script src="{{ asset('vendors/datepicker/daterangepicker.js') }}"></script>
+    <script src="{{ asset('assets/Datepiker/persian-datepicker.js') }}"></script>
+    <script src="{{ asset('vendors/datepicker/bootstrap-datepicker.fa.min.js') }}"></script>
+
+
+    <!-- Slick -->
+    <script src="{{ asset('vendors/slick/slick.min.js') }}"></script>
+
+    <!-- Vamp -->
+    <script src="{{ asset('vendors/vmap/jquery.vmap.min.js') }}"></script>
+    <script src="{{ asset('vendors/vmap/maps/jquery.vmap.usa.js') }}"></script>
+    <script src="{{ asset('assets/js/examples/vmap.js') }}"></script>
+
+
+    <!-- a -->
+    <script src='{{ asset('assets/Cal/moment.js') }}'></script>
+    <script src='{{ asset('assets/Cal/moment-jalaali.js') }}'></script>
+    <script src='{{ asset('assets/Cal/fullcalendar.js') }}'></script>
+    <script src='{{ asset('assets/Cal/fa.js') }}'></script>
+
+
+
+    <!-- Dashboard scripts -->
+    <script src="{{ asset('assets/js/examples/dashboard.js') }}"></script>
+    <div class="colors"> <!-- To use theme colors with Javascript -->
+        <div class="bg-primary"></div>
+        <div class="bg-primary-bright"></div>
+        <div class="bg-secondary"></div>
+        <div class="bg-secondary-bright"></div>
+        <div class="bg-info"></div>
+        <div class="bg-info-bright"></div>
+        <div class="bg-success"></div>
+        <div class="bg-success-bright"></div>
+        <div class="bg-danger"></div>
+        <div class="bg-danger-bright"></div>
+        <div class="bg-warning"></div>
+        <div class="bg-warning-bright"></div>
+    </div>
+
+
+    <!-- App scripts -->
+    <script src="{{ asset('assets/js/app.min.js') }}"></script>
 {% endblock %}
 {% block body %}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">{% trans %}admin.admin{% endtrans %}</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
+    <!-- begin::preloader-->
+    <div class="preloader">
+        <div class="preloader-icon"></div>
+    </div>
+    <!-- end::preloader -->
+
+    <!-- begin::header -->
+    <div class="header">
+
+        <div>
+            <ul class="navbar-nav">
+
+                <!-- begin::navigation-toggler -->
+                <li class="nav-item navigation-toggler">
+                    <a href="#" class="nav-link" title="Hide navigation">
+                        <i data-feather="arrow-left"></i>
+                    </a>
+                </li>
+                <li class="nav-item navigation-toggler mobile-toggler">
+                    <a href="#" class="nav-link" title="Show navigation">
+                        <i data-feather="menu"></i>
+                    </a>
+                </li>
+                <!-- end::navigation-toggler -->
+
                 <li class="nav-item">
-                    <a class="nav-link" href="{{path('adminDashboard')}}">
-                        <i class="fa fa-desktop"></i>
-                        {% trans %}admin.dashboard{% endtrans %}
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{path('adminUsers')}}">
-                        <i class="fa fa-users"></i>
-                        {% trans %}admin.users{% endtrans %}
-                    </a>
-                </li>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-newspaper"></i>
-                        {% trans %}admin.news{% endtrans %}
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{path('adminNewsNew')}}">
-                            <i class="fa fa-plus-circle"></i>
-                            {% trans %}admin.news.new{% endtrans %}
-                        </a>
-                        <a class="dropdown-item" href="{{path('adminNews')}}">
-                            <i class="fa fa-list"></i>
-                            {% trans %}admin.news{% endtrans %}
-                        </a>
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">ایجاد</a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="{{ path('adminNewsNew') }}" class="dropdown-item">خبر</a>
                     </div>
                 </li>
             </ul>
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_logout') }}">
-                        <i class="fa fa-eject"></i>
-                        {% trans %}user.logout{% endtrans %}
+        </div>
+
+        <div>
+            <ul class="navbar-nav">
+                <!-- begin::header minimize/maximize -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link" title="تمام صفحه" data-toggle="fullscreen">
+                        <i class="maximize" data-feather="maximize"></i>
+                        <i class="minimize" data-feather="minimize"></i>
+                    </a>
+                </li>
+                <!-- end::header minimize/maximize -->
+
+                <!-- begin::header notification dropdown -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link nav-link-notify" title="اطلاعیه‌ها" data-toggle="dropdown">
+                        <i data-feather="bell"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-left dropdown-menu-big">
+                        <div class="p-4 text-center d-flex justify-content-between"
+                             data-backround-image="assets/media/image/image1.jpg">
+                            <h6 class="mb-0">اطلاعیه‌ها</h6>
+                            <small class="font-size-11 opacity-7">1 اطلاعیه خوانده نشده</small>
+                        </div>
+                        <div>
+                            <ul class="list-group list-group-flush">
+                                <li>
+                                    <a href="#" class="list-group-item d-flex hide-show-toggler">
+                                        <div>
+                                            <figure class="avatar avatar-sm m-r-15">
+                                                <span class="avatar-title bg-success-bright text-success rounded-circle">
+                                                    <i class="ti-user"></i>
+                                                </span>
+                                            </figure>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <p class="mb-0 line-height-20 d-flex justify-content-between">
+                                                ثبت نام خریدار جدید
+                                                <i title="Mark as read" data-toggle="tooltip"
+                                                   class="hide-show-toggler-item fa fa-circle-o font-size-11"></i>
+                                            </p>
+                                            <span class="text-muted small">20 دقیقه قبل</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="text-divider small pb-2 pl-3 pt-3">
+                                    <span>اطلاعیه‌های قبلی</span>
+                                </li>
+                                <li>
+                                    <a href="#" class="list-group-item d-flex hide-show-toggler">
+                                        <div>
+                                            <figure class="avatar avatar-sm m-r-15">
+                                                <span class="avatar-title bg-warning-bright text-warning rounded-circle">
+                                                    <i class="ti-package"></i>
+                                                </span>
+                                            </figure>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <p class="mb-0 line-height-20 d-flex justify-content-between">
+                                                سفارش جدید دریافت شد
+                                                <i title="Mark as unread" data-toggle="tooltip"
+                                                   class="hide-show-toggler-item fa fa-check font-size-11"></i>
+                                            </p>
+                                            <span class="text-muted small">45 ثانیه قبل</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                       class="list-group-item d-flex align-items-center hide-show-toggler">
+                                        <div>
+                                            <figure class="avatar avatar-sm m-r-15">
+                                                <span class="avatar-title bg-danger-bright text-danger rounded-circle">
+                                                    <i class="ti-server"></i>
+                                                </span>
+                                            </figure>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <p class="mb-0 line-height-20 d-flex justify-content-between">
+                                                به سقف مجاز سرور نزدیک شده اید
+                                                <i title="Mark as unread" data-toggle="tooltip"
+                                                   class="hide-show-toggler-item fa fa-check font-size-11"></i>
+                                            </p>
+                                            <span class="text-muted small">55 ثانیه قبل</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                       class="list-group-item d-flex align-items-center hide-show-toggler">
+                                        <div>
+                                            <figure class="avatar avatar-sm m-r-15">
+                                                <span class="avatar-title bg-info-bright text-info rounded-circle">
+                                                    <i class="ti-layers"></i>
+                                                </span>
+                                            </figure>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <p class="mb-0 line-height-20 d-flex justify-content-between">
+                                                اپ های دارای بروزسانی
+                                                <i title="Mark as unread" data-toggle="tooltip"
+                                                   class="hide-show-toggler-item fa fa-check font-size-11"></i>
+                                            </p>
+                                            <span class="text-muted small">دیروز</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="p-2 text-right">
+                            <ul class="list-inline small">
+                                <li class="list-inline-item">
+                                    <a href="#">علامتگذاری به عنوان خوانده شده</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <!-- end::header notification dropdown -->
+
+                <!-- begin::user menu -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link" title="User menu" data-toggle="dropdown">
+                        <i data-feather="settings"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-left dropdown-menu-big">
+                        <div class="p-4 text-center d-flex justify-content-between"
+                             data-backround-image="assets/media/image/image1.jpg">
+                            <h6 class="mb-0">تنظیمات</h6>
+                        </div>
+                        <div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
+                                        <label class="custom-control-label" for="customSwitch1">مجوز ارسال اطلاعیه</label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                                        <label class="custom-control-label" for="customSwitch2">پنهان کردن درخواست ها</label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch3" checked>
+                                        <label class="custom-control-label" for="customSwitch3">افزایش سرعت انجام دستورات</label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch4" checked>
+                                        <label class="custom-control-label" for="customSwitch4">پنهان کردن منو</label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch5">
+                                        <label class="custom-control-label" for="customSwitch5">به خاطرسپاری بازدید</label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch6">
+                                        <label class="custom-control-label" for="customSwitch6">فعالسازی تولید گزارش خودکار</label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <!-- end::user menu -->
+            </ul>
+
+            <!-- begin::mobile header toggler -->
+            <ul class="navbar-nav d-flex align-items-center">
+                <li class="nav-item header-toggler">
+                    <a href="#" class="nav-link">
+                        <i data-feather="arrow-down"></i>
                     </a>
                 </li>
             </ul>
+            <!-- end::mobile header toggler -->
         </div>
-    </nav>
-    <div class="container">
-        <div class="row pt-2">
-            <main role="main" class="col-md-12 col-sm">
-                <div class="">
-                    {% block pageBody %}{% endblock %}
-                </div>
-            </main>
-        </div>
+
     </div>
+    <!-- end::header -->
+
+    <!-- begin::main -->
+    <div id="main">
+
+        <!-- begin::navigation -->
+        <div class="navigation">
+
+            <div class="navigation-menu-tab">
+                <div>
+                    <div class="navigation-menu-tab-header" data-toggle="tooltip" title="{{  app.user.fullName }}" data-placement="right">
+                        <a href="#" class="nav-link" data-toggle="dropdown" aria-expanded="false">
+                            <figure class="avatar avatar-sm">
+                                <img src="{{ asset('media/image/user/women_avatar1.jpg') }}" class="rounded-circle" alt="avatar">
+                            </figure>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-left dropdown-menu-big">
+                            <div class="p-3 text-center" data-backround-image="assets/media/image/image1.jpg">
+                                <figure class="avatar mb-3">
+                                    <img src="{{ asset('media/image/user/women_avatar1.jpg') }}" class="rounded-circle" alt="image">
+                                </figure>
+                                <h6 class="d-flex align-items-center justify-content-center">
+                                    {{  app.user.fullName }}
+                                    <a href="#" class="btn btn-primary btn-sm ml-2" data-toggle="tooltip" title="ویرایش پروفایل">
+                                        <i data-feather="edit-2"></i>
+                                    </a>
+                                </h6>
+                            </div>
+                            <div class="dropdown-menu-body">
+                                <div class="list-group list-group-flush">
+                                    <a href="#" class="list-group-item d-flex">پروفایل</a>
+                                    <a href="#" class="list-group-item d-flex">
+                                        تعداد خبرهای ارسالی <span class="text-muted ml-auto">{{ EntityMGR.findBy('App:NewsNews',{'submitter':app.user}) | length}}</span>
+                                    </a>
+                                    <a href="{{path('app_logout')}}" class="list-group-item text-danger" data-sidebar-target="#settings">خروج</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-grow-1">
+                    <ul>
+                        <li>
+                            <a class="active" href="#" data-toggle="tooltip" data-placement="right" title="مدیریت کاربران"
+                               data-nav-target="#dashboards">
+                                <i data-feather="bar-chart-2"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="tooltip" data-placement="right" title="مدیریت خبرها" data-nav-target="#apps">
+                                <i data-feather="command"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="tooltip" data-placement="right" title="تنظیمات سراسری"
+                               data-nav-target="#elements">
+                                <i data-feather="layers"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li>
+                            <a href="#" data-toggle="tooltip" data-placement="right" title="تنظیمات">
+                                <i data-feather="settings"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('app_logout') }}" data-toggle="tooltip" data-placement="right" title="خروج">
+                                <i data-feather="log-out"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- begin::navigation menu -->
+            <div class="navigation-menu-body">
+
+                <!-- begin::navigation-logo -->
+                <div>
+                    <div id="navigation-logo">
+                        <a href="{{path('adminDashboard')}}">
+                            <img class="logo" src="{{asset('assets/media/image/logo-F.png')}}" alt="logo">
+                            <img class="logo-light" src="{{asset('assets/media/image/logo-light.png')}}" alt="light logo">
+                        </a>
+                    </div>
+                </div>
+                <!-- end::navigation-logo -->
+
+                <div class="navigation-menu-group">
+
+                    <div class="open" id="dashboards">
+                        <ul>
+                            <li class="navigation-divider">مدیریت کاربران</li>
+                            <li><a class="active" href="{{path('adminUsers')}}">فهرست کاربران <span class="badge badge-danger">{{ EntityMGR.findAll('App:SysUser') | length}}</span> </a></li>
+                        </ul>
+                    </div>
+                    <div id="apps">
+                        <ul>
+                            <li class="navigation-divider">مدیریت خبرها</li>
+                            <li>
+                                <a href="{{path('adminNewsNew')}}">
+                                    <span>خبر جدید</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{path('adminNews')}}">
+                                    <span>آرشیو خبرها</span>
+                                    <span class="badge badge-danger">{{ EntityMGR.findAll('App:NewsNews') | length}}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="elements">
+                        <ul>
+                            <li class="navigation-divider">تنظیمات سراسری</li>
+                            <li>
+                                <a href="{{path('adminNews')}}">
+                                    <span>تنظیمات رابط کاربری</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- end::navigation menu -->
+
+        </div>
+        <!-- end::navigation -->
+
+        <!-- begin::main-content -->
+        <div class="main-content">
+
+            <!-- begin::page-header -->
+            <div class="page-header">
+                <div class="container-fluid d-sm-flex justify-content-between">
+                    <h4>{{ block('pageTitle') }}</h4>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{{path('adminDashboard')}}">بخش مدیریت</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ block('pageTitle') }}</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+            <!-- end::page-header -->
+
+            <!-- begin::page content -->
+            <div class="container-fluid">
+                {% block pageBody %}{% endblock %}
+            </div>
+            <!-- end::page content -->
+
+            <!-- begin::footer -->
+            <footer>
+                <div class="container-fluid">
+                    <div>© طراحی و توسعه توسط   <a href="http://sarkesh.org"> توسعه فناوری سرکش </a></div>
+
+                    <div>
+                        <nav class="nav">
+                            <a href="#" class="nav-link">راهنمایی</a>
+                        </nav>
+                    </div>
+                </div>
+            </footer>
+            <!-- end::footer -->
+
+        </div>
+        <!-- end::main-content -->
+
+    </div>
+    <!-- end::main -->
+
 {% endblock %}

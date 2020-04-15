@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap-rtl.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/datatables/datatables.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/datatables/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/sahel/sahel.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/custom/home.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/custom/home.css') }}">
+{% endblock %}
+{% block title %}صفحه نخست{% endblock %}
+{% block body %}
+    <nav class="navbar navbar-expand-lg navbar-dark {% if app.request.get('_route') == 'home' %} position-absolute opacity {% else %} opacity-1 {% endif %}" style="width: 100%" >
+        <a class="navbar-brand" href="{{path('home')}}">
+            <img src="{{asset('images/logo-top-center.png')}}" class="d-inline-block align-top" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{path('home')}}">{% trans %}menu.home{% endtrans %}</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{path('newsArchive')}}">{% trans %}menu.news.archive{% endtrans %}</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {% trans %}menu.about{% endtrans %}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">{% trans %}menu.m1{% endtrans %}</a>
+                        <a class="dropdown-item" href="#">{% trans %}menu.m2{% endtrans %}</a>
+                        <a class="dropdown-item" href="#">{% trans %}menu.m3{% endtrans %}</a>
+                        <a class="dropdown-item" href="#">{% trans %}menu.m4{% endtrans %}</a>
+                        <a class="dropdown-item" href="#">{% trans %}menu.m5{% endtrans %}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">{% trans %}menu.m6{% endtrans %}</a>
+                        <a class="dropdown-item" href="#">{% trans %}menu.m7{% endtrans %}</a>
+                        <a class="dropdown-item" href="#">{% trans %}menu.m8{% endtrans %}</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {% trans %}menu2.m0{% endtrans %}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">{% trans %}menu2.m1{% endtrans %}</a>
+                        <a class="dropdown-item" href="#">{% trans %}menu2.m2{% endtrans %}</a>
+                        <a class="dropdown-item" href="#">{% trans %}menu2.m3{% endtrans %}</a>
+                        <a class="dropdown-item" href="#">{% trans %}menu2.m4{% endtrans %}</a>
+                        <a class="dropdown-item" href="#">{% trans %}menu2.m5{% endtrans %}</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {% trans %}menu4.m0{% endtrans %}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#"><i class="fa fa-images"></i> {% trans %}menu4.m1{% endtrans %}</a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-film"></i> {% trans %}menu4.m2{% endtrans %}</a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-volume-up"></i> {% trans %}menu4.m3{% endtrans %}</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{% trans %}menu3.m0{% endtrans %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">{% trans %}menu5.m0{% endtrans %}</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    {% block pageBody %}{% endblock %}
+
+    <div class="container-fluid footer">
+        <div class="row ">
+            <p class="col text-light text-center pt-3">
+                تمام حقوق این رسانه برای موسسه فرهنگی معراج اندیشه گل‌گهر از سال ۱۳۹۸ محفوظ است.
+            </p>
+        </div>
+    </div>
+{% endblock %}

@@ -1,8 +1,11 @@
 nav{
     background-color: #103B7F;
-    opacity: 0.9;
     z-index: 100;
 }
+.opacity{
+    opacity: 80%;
+}
+
 .container-firstnews {
     position: relative;
 }
@@ -101,7 +104,6 @@ nav{
     right: 15px;
     font-size: 1rem;
 }
-
 .footer{
     background-color: #262626;
     color: #969696;
@@ -122,4 +124,25 @@ nav{
 .nav-link.active{
     background-color: #2d3237 !important;
     border: 0px;
+}
+.frontHeader{
+    background-color: #0E233C;
+}
+.frontBody{
+    background-color: #2D3237;
+}
+.frontBody2{
+    background-color: #DEA23A;
+}
+.text-success{
+    color: #48833D;
+}
+.card-notes:hover{
+    background-color: #FCD975;
+}
+.frontBody3{
+    background-color: #FDD083;
+}
+.frontBody4{
+    background-color: #eceff4;
 }

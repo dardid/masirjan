@@ -1,0 +1,122 @@
+{% extends 'front.html.twig' %}
+{% block title %}صفحه نخست{% endblock %}
+{% block pageBody %}
+<div class="container-fluid">
+    <div class="row frontHeader">
+        <div class="col">
+            <h1 class="text-light pr-5">آرشیو اخبار</h1>
+        </div>
+    </div>
+    <div class="row frontBody">
+        <div class="col-sm-12 col-md-8 p-5">
+            <div class="t1">
+                <img class="card-img-top" src="{{ asset('files/n1.jpg') }}">
+                <div class="border-right border-warning mt-3">
+                    <h2 class="text-light p-2">مراسم بزرگداشت سردار دل ها برگزار شد</h2>
+                    <p class="text-light p-2 text-justify">
+                        مراسم بزرگداشت سردار سرافراز اسلام، حاج قاسم سلیمانی به همت موسسه فرهنگی معراج اندیشه گل‌گهر و با حضور امام جمعه، سرپرست فرمانداری و جمعی از عاشقان و دلدادگان ولایت در مسجد مسلم ابن عقیل (ع) برگزار شد.
+                    </p>
+                    <p class="text-warning p-2">1398/02/06</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4 pt-5">
+            <div class="">
+                <img class="card-img-top" src="{{ asset('files/n1.jpg') }}">
+                <div class="border-right border-warning mt-3">
+                    <h3 class="text-light p-2">مراسم بزرگداشت سردار دل ها برگزار شد</h3>
+                    <p class="text-warning p-2">1398/02/06</p>
+                </div>
+            </div>
+            <div class="">
+                <img class="card-img-top" src="{{ asset('files/n1.jpg') }}">
+                <div class="border-right border-warning mt-3">
+                    <h3 class="text-light p-2">مراسم بزرگداشت سردار دل ها برگزار شد</h3>
+                    <p class="text-warning p-2">1398/02/06</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row frontBody2">
+        <div class="col-12">
+            <h2 class="p-5 text-success text-center">آرشیو مقالات</h2>
+            <div class="row">
+                <div class="col-sm-12 col-md-4">
+                    <div class="card-notes">
+                        <img class="card-img-top img-thumbnail" src="{{ asset('images/n1.jpg') }}">
+                        <div class="card-body opacity-100 text-justify">
+
+                            اين 40 فكر سمّی را كنار بگذار
+
+
+
+                            معرفی کتاب
+
+                            اين 40 فكر سمّی را كنار بگذار
+
+
+
+                            انتشارات رسا كتابی تحت عنوان «يك دقيقه اين 40 فكر سمّی را كنار بگذار» منتشر کرده است. آرنولد لازاروس، کلیفورد لازاروس، آلن فی نویسندگان این کتاب معتقدند ريشه بسياری از مشكلات انسان‌ها خطای فكری است.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="card-notes">
+                        <img class="card-img-top img-thumbnail" src="{{ asset('images/n1.jpg') }}">
+                        <div class="card-body opacity-100 text-justify">
+
+                            اين 40 فكر سمّی را كنار بگذار
+
+
+
+                            معرفی کتاب
+
+                            اين 40 فكر سمّی را كنار بگذار
+
+
+
+                            انتشارات رسا كتابی تحت عنوان «يك دقيقه اين 40 فكر سمّی را كنار بگذار» منتشر کرده است. آرنولد لازاروس، کلیفورد لازاروس، آلن فی نویسندگان این کتاب معتقدند ريشه بسياری از مشكلات انسان‌ها خطای فكری است.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="card-notes">
+                        <img class="card-img-top img-thumbnail" src="{{ asset('images/n1.jpg') }}">
+                        <div class="card-body opacity-100 text-justify">
+
+                            اين 40 فكر سمّی را كنار بگذار
+
+
+
+                            معرفی کتاب
+
+                            اين 40 فكر سمّی را كنار بگذار
+
+
+
+                            انتشارات رسا كتابی تحت عنوان «يك دقيقه اين 40 فكر سمّی را كنار بگذار» منتشر کرده است. آرنولد لازاروس، کلیفورد لازاروس، آلن فی نویسندگان این کتاب معتقدند ريشه بسياری از مشكلات انسان‌ها خطای فكری است.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-7 frontBody3">
+            <h2 class="p-5 text-success text-center">گزارش‌های روز</h2>
+        </div>
+        <div class="col-sm-12 col-md-5 frontBody4">
+            <h2 class="p-5 text-dark text-center">آخرین عناوین خبری</h2>
+            <ul class="">
+                {% for news in lastNews %}
+                    <li>
+                        <a class="link-1" href="{{ path('newsShowNews', {'url': news.id}) }}">
+                            {{ news.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
