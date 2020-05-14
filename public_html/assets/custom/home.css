@@ -146,3 +146,13 @@ nav{
 .frontBody4{
     background-color: #eceff4;
 }
+.frontBody5{
+    background-color: #FFFFFF;
+}
+.frontSlide{
+    background-color: #E6E6E6;
+}
+.title-on-image{
+    width: 100%;
+    font-weight: bold;
+}

@@ -30,13 +30,13 @@ class NewsController extends AbstractController
     /**
      * @Route("/archive/show/news/{url}", name="newsShowNews")
      */
-    public function newsShowNews(Service\EntityMGR $entityMGR)
+    public function newsShowNews($url, Service\EntityMGR $entityMGR)
     {
-        $news = $entityMGR->findAll('App:NewsNews');
-        $lastNews = $entityMGR->findByPage('App:NewsNews',1,20);
-        return $this->render('news/archive.html.twig', [
-            'news' => $news,
-            'lastNews'=>$lastNews
+        $news = $entityMGR->find('App:NewsNews',$url);
+        if(is_null($news))
+            return $this->redirectToRoute('404');
+        return $this->render('news/showNews.html.twig', [
+            'news' => $news
         ]);
     }
 }

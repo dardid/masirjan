@@ -1,0 +1,39 @@
+{% extends 'front.html.twig' %}
+{% block pageTitle %}{{ news.title }}{% endblock %}
+{% block pageBody %}
+    <div class="container-fluid">
+        <div class="row frontHeader">
+            <div class="col">
+                <h2 class="text-light pr-5">اخبار</h2>
+            </div>
+        </div>
+        <div class="row frontBody5">
+            <div class="col-sm-12 col-md-8 p-5">
+                <div class="position-relative">
+                    <img class="img-fluid" src="{{ asset('files/n1.jpg') }}">
+                    <h2 class="title-on-image p-3 text-light position-absolute bg-dark border" style="bottom:0rem;">{{news.title}}</h2>
+                </div>
+                <p class="text-justify">
+                    {{ news.body | raw }}
+                </p>
+            </div>
+            <div class="col-sm-12 col-md-4 pt-5">
+                <div class="card frontSlide border-0 rounded-0">
+                    <div class="card-body">
+                        <h4 class="text-success">آخرین خبرها</h4>
+                        <hr class="mb-2">
+                        {% set lastNews = EntityMGR.findByPage('App:NewsNews',1,20) %}
+                        {% for news in lastNews %}
+                            <li>
+                                <a class="link-1" href="{{ path('newsShowNews', {'url': news.id}) }}">
+                                    {{ news.title }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
