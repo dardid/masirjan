@@ -20,12 +20,11 @@ class ConfigMGR
     function __construct(EntityMGR $entityMgr)
     {
         $this->em = $entityMgr;
-        $this->config = $this->em->findOneBy('App:SysConfig',['configCode'=>0]);
+        $this->config = $this->em->findOneBy('App:SysConfig',['configCode'=>1]);
         if(is_null($this->config))
         {
             $config = new Entity\SysConfig();
-            $config->setSiteName('your new blog');
-            $config->setConfigCode(0);
+            $config->setConfigCode(1);
             $this->em->insertEntity($config);
             $this->config = $config;
         }

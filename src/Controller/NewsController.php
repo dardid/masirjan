@@ -35,7 +35,7 @@ class NewsController extends AbstractController
         $news = $entityMGR->find('App:NewsNews',$url);
         if(is_null($news))
             return $this->redirectToRoute('404');
-        return $this->render('news/showNews.html.twig', [
+        return $this->render('staticPages/archive.html.twig', [
             'news' => $news
         ]);
     }

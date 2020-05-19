@@ -17,11 +17,6 @@ class SysConfig
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $siteName;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $region;
@@ -37,73 +32,78 @@ class SysConfig
     private $configCode;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\NewsNews")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\Column(type="text", nullable=true)
      */
-    private $headPage;
+    private $aboutUs;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getSiteName(): ?string
-    {
-        return $this->siteName;
-    }
-
-    public function setSiteName(?string $siteName): self
-    {
-        $this->siteName = $siteName;
-
-        return $this;
-    }
-
-    public function getRegion(): ?string
+    /**
+     * @return mixed
+     */
+    public function getRegion()
     {
         return $this->region;
     }
 
-    public function setRegion(string $region): self
+    /**
+     * @param mixed $region
+     */
+    public function setRegion($region): void
     {
         $this->region = $region;
-
-        return $this;
     }
 
-    public function getLanguage(): ?string
+    /**
+     * @return mixed
+     */
+    public function getLanguage()
     {
         return $this->language;
     }
 
-    public function setLanguage(string $language): self
+    /**
+     * @param mixed $language
+     */
+    public function setLanguage($language): void
     {
         $this->language = $language;
-
-        return $this;
     }
 
-    public function getConfigCode(): ?string
+    /**
+     * @return mixed
+     */
+    public function getConfigCode()
     {
         return $this->configCode;
     }
 
-    public function setConfigCode(string $configCode): self
+    /**
+     * @param mixed $configCode
+     */
+    public function setConfigCode($configCode): void
     {
         $this->configCode = $configCode;
-
-        return $this;
     }
 
-    public function getHeadPage(): ?NewsNews
+    /**
+     * @return mixed
+     */
+    public function getAboutUs()
     {
-        return $this->headPage;
+        return $this->aboutUs;
     }
 
-    public function setHeadPage(?NewsNews $headPage): self
+    /**
+     * @param mixed $aboutUs
+     */
+    public function setAboutUs($aboutUs): void
     {
-        $this->headPage = $headPage;
-
-        return $this;
+        $this->aboutUs = $aboutUs;
     }
+
+
 }

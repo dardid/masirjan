@@ -89,4 +89,35 @@ class AdminController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/manager/staticpages/list", name="adminStaticPages")
+     */
+    public function adminStaticPages( Service\EntityMGR $entityMGR)
+    {
+        $pages = $entityMGR->findAll('App:StaticPages');
+        return $this->render('admin/staticPages/archive.html.twig', [
+            'pages' => $pages
+        ]);
+    }
+
+    /**
+     * @Route("/manager/staticpages/edit/{id}", name="adminStaticPagesEdit")
+     */
+    public function adminStaticPagesEdit($id,Request $request,TranslatorInterface $translator,Service\EntityMGR $entityMGR)
+    {
+        $page = $entityMGR->find('App:StaticPages',$id);
+        if(is_null($page))
+            return $this->redirectToRoute('404');
+
+        $form = $this->createForm(Form\StaticPageType::class ,$page);
+        $form->handleRequest($request);
+        $alert = null;
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityMGR->update($page);
+            return $this->redirectToRoute('adminStaticPages',['msg'=>'1']);
+        }
+        return $this->render('admin/news/newsEdit.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
 }

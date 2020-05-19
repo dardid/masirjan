@@ -1,0 +1,28 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block pageTitle %}صفحات ثابت{% endblock %}
+{% block pageBody %}
+    <h1>صفحات ثابت</h1>
+    <div class="table-responsive">
+        <table class="table table-sm table-bordered table-hover text-center">
+            <thead class="bg-dark text-light">
+            <tr>
+                <th>{% trans %}table.ID{% endtrans %}</th>
+                <th>{% trans %}admin.news.title{% endtrans %}</th>
+                <th>امکانات</th>
+            </tr>
+            </thead>
+            <tbody class="">
+            {% for page in pages %}
+                <tr class="">
+                    <td>{{ loop.index }}</td>
+                    <td>{{ page.title }}</td>
+                    <td>
+                        <a class="btn btn-sm btn-warning" href="{{ path('adminStaticPagesEdit',{'id':page.id}) }}">ویرایش</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
