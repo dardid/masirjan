@@ -20,17 +20,6 @@
                         </div>
                     </div>
                 </a>
-
-                <hr>
-                <div class="row">
-                    <div class="col-4">
-                        <img class="img-thumbnail" src="{{ asset('images/top1.jpg') }}">
-                    </div>
-                    <div class="col-8">
-                        <h3>خبر آزمایشی ۱</h3>
-                        <p>1398/06/22</p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -115,142 +104,169 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <img class="p-0" src="{{ asset('images/ketabha.png') }}" style="width: 100%">
-    </div>
-    <div class="container-fluid ms-h2 mt-3">
-        <div class="row">
-            <div class="col-sm-12 col-md-3 d-flex flex-wrap align-items-center ">
-                <img class="img-thumbnail img-fluid" src="{{ asset('images/book1.jpg') }}">
+    <style>
+        .counter {
+            background-color:#f5f5f5;
+            padding: 20px 0;
+            border-radius: 5px;
+        }
+
+        .count-title {
+            font-size: 40px;
+            font-weight: normal;
+            margin-top: 10px;
+            margin-bottom: 0;
+            text-align: center;
+        }
+
+        .count-text {
+            font-size: 13px;
+            font-weight: normal;
+            margin-top: 10px;
+            margin-bottom: 0;
+            text-align: center;
+        }
+
+        .fa-2x {
+            margin: 0 auto;
+            float: none;
+            display: table;
+            color: #4ad1e5;
+        }
+    </style>
+
+    <div class="container py-3 my-3" style="background-color: #04afa6">
+        <div class="row text-center">
+            <div class="col">
+                <div class="counter rounded-circle">
+                    <i class="fa fa-user fa-2x"></i>
+                    <h2 class="timer count-title count-number" data-to="100" data-speed="1500"></h2>
+                    <p class="count-text ">تعداد مخاطبان</p>
+                </div>
             </div>
-            <div class="col-sm-12 col-md-9">
-                <h1 class="display-4 text-light pt-3">عنوان کتاب</h1>
-                <p class="text-light text-justify">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-                </p>
-                <p class="text-center">
-                    <i class="text-light fa fa-quote-left" style="font-size: 2rem"></i>
-                </p>
+            <div class="col">
+                <div class="counter rounded-circle">
+                    <i class="fa fa-coffee fa-2x"></i>
+                    <h2 class="timer count-title count-number" data-to="1700" data-speed="1500"></h2>
+                    <p class="count-text ">تعداد مسابقات</p>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="jbt1" style="background-image: url('{{ asset('images/jbt2.jpg') }}'); max-height: 20rem;">
-        <div class="jumbotron mb-0 pt-2 pl-4 jbt3" >
-            <div class="row">
-                <div class="col-sm col-md text-center">
-                    <h1 class="display-4 pt-3 text-light">فلسطین از رودخانه تا دریا</h1>
-                    <hr class="my-4 text-light">
-                    <p class="lead text-light">
-                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                    </p>
+            <div class="col">
+                <div class="counter rounded-circle">
+                    <i class="fa fa-door-open fa-2x"></i>
+                    <h2 class="timer count-title count-number" data-to="11900" data-speed="1500"></h2>
+                    <p class="count-text ">تعداد کلاس‌ها</p>
+                </div></div>
+            <div class="col">
+                <div class="counter rounded-circle">
+                    <i class="fa fa-calendar fa-2x"></i>
+                    <h2 class="timer count-title count-number" data-to="157" data-speed="1500"></h2>
+                    <p class="count-text ">تعداد رویدادها</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid pt-0 mt-0 pb-5" style="background-color: #2D3237;">
-        <img class="pt-2" src="{{ asset('images/media.png') }}" style="width: 100%">
-        <ul class="nav nav-tabs nav-home-mddle justify-content-center" id="myTab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link nav-item-middel" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">تصاویر</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link nav-item-middel" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">ویديو</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link nav-item-middel" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">صوت</a>
-            </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                <div class="container pt-5">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-3 d-flex flex-wrap align-items-center">
-                            <div class="text-center">
-                                <h4 class="text-light">
-                                    عنوان آزمایشی
-                                </h4>
-                                <img class="img-fluid" src="{{ asset('images/image1.jpg') }}">
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 d-flex flex-wrap align-items-center">
-                            <div class="text-center">
-                                <h4 class="text-light">
-                                    عنوان آزمایشی
-                                </h4>
-                                <img class="img-fluid" src="{{ asset('images/image2.jpg') }}">
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-3 d-flex flex-wrap align-items-center">
-                            <div class="text-center">
-                                <h4 class="text-light">
-                                    عنوان آزمایشی
-                                </h4>
-                                <img class="img-fluid" src="{{ asset('images/image3.jpg') }}">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                <div class="container pt-5">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-3 d-flex flex-wrap align-items-center">
-                            <div class="text-center">
-                                <h4 class="text-light">
-                                    عنوان آزمایشی
-                                </h4>
-                                <img class="img-fluid" src="{{ asset('images/image1.jpg') }}">
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 d-flex flex-wrap align-items-center">
-                            <div class="text-center">
-                                <h4 class="text-light">
-                                    عنوان آزمایشی
-                                </h4>
-                                <img class="img-fluid" src="{{ asset('images/image2.jpg') }}">
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-3 d-flex flex-wrap align-items-center">
-                            <div class="text-center">
-                                <h4 class="text-light">
-                                    عنوان آزمایشی
-                                </h4>
-                                <img class="img-fluid" src="{{ asset('images/image3.jpg') }}">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                <div class="container pt-5">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-3 d-flex flex-wrap align-items-center">
-                            <div class="text-center">
-                                <h2 class="text-light">
-                                    عنوان آزمایشی
-                                </h2>
-                                <img class="img-fluid" src="{{ asset('images/image1.jpg') }}">
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 d-flex flex-wrap align-items-center">
-                            <div class="text-center">
-                                <h2 class="text-light">
-                                    عنوان آزمایشی
-                                </h2>
-                                <img class="img-fluid" src="{{ asset('images/image2.jpg') }}">
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-3 d-flex flex-wrap align-items-center">
-                            <div class="text-center">
-                                <h2 class="text-light">
-                                    عنوان آزمایشی
-                                </h2>
-                                <img class="img-fluid" src="{{ asset('images/image3.jpg') }}">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        (function ($) {
+            $.fn.countTo = function (options) {
+                options = options || {};
+
+                return $(this).each(function () {
+                    // set options for current element
+                    var settings = $.extend({}, $.fn.countTo.defaults, {
+                        from:            $(this).data('from'),
+                        to:              $(this).data('to'),
+                        speed:           $(this).data('speed'),
+                        refreshInterval: $(this).data('refresh-interval'),
+                        decimals:        $(this).data('decimals')
+                    }, options);
+
+                    // how many times to update the value, and how much to increment the value on each update
+                    var loops = Math.ceil(settings.speed / settings.refreshInterval),
+                        increment = (settings.to - settings.from) / loops;
+
+                    // references & variables that will change with each update
+                    var self = this,
+                        $self = $(this),
+                        loopCount = 0,
+                        value = settings.from,
+                        data = $self.data('countTo') || {};
+
+                    $self.data('countTo', data);
+
+                    // if an existing interval can be found, clear it first
+                    if (data.interval) {
+                        clearInterval(data.interval);
+                    }
+                    data.interval = setInterval(updateTimer, settings.refreshInterval);
+
+                    // initialize the element with the starting value
+                    render(value);
+
+                    function updateTimer() {
+                        value += increment;
+                        loopCount++;
+
+                        render(value);
+
+                        if (typeof(settings.onUpdate) == 'function') {
+                            settings.onUpdate.call(self, value);
+                        }
+
+                        if (loopCount >= loops) {
+                            // remove the interval
+                            $self.removeData('countTo');
+                            clearInterval(data.interval);
+                            value = settings.to;
+
+                            if (typeof(settings.onComplete) == 'function') {
+                                settings.onComplete.call(self, value);
+                            }
+                        }
+                    }
+
+                    function render(value) {
+                        var formattedValue = settings.formatter.call(self, value, settings);
+                        $self.html(formattedValue);
+                    }
+                });
+            };
+
+            $.fn.countTo.defaults = {
+                from: 0,               // the number the element should start at
+                to: 0,                 // the number the element should end at
+                speed: 1000,           // how long it should take to count between the target numbers
+                refreshInterval: 100,  // how often the element should be updated
+                decimals: 0,           // the number of decimal places to show
+                formatter: formatter,  // handler for formatting the value before rendering
+                onUpdate: null,        // callback method for every time the element is updated
+                onComplete: null       // callback method for when the element finishes updating
+            };
+
+            function formatter(value, settings) {
+                return value.toFixed(settings.decimals);
+            }
+        }(jQuery));
+
+        jQuery(function ($) {
+            // custom formatting example
+            $('.count-number').data('countToOptions', {
+                formatter: function (value, options) {
+                    return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+                }
+            });
+
+            // start all the timers
+            $('.timer').each(count);
+
+            function count(options) {
+                var $this = $(this);
+                options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+                $this.countTo(options);
+            }
+        });
+    </script>
 {% endblock %}
